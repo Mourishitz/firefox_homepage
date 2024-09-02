@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.debug {
+  border: 2px solid green;
+  background-color: rgba(0, 255, 0, 0.1);
+}
+

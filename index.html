@@ -1,0 +1,133 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <title>Homepage</title>
+  <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com/"></script>
+  <link rel="icon" type="image/png" href="public/favicon.ico" />
+
+</head>
+
+<body class="relative overflow-hidden w-full h-screen">
+  <video autoplay loop id="background" class="absolute top-0 left-0 w-full h-full object-cover">
+    <source src="assets/wallpaper.mp4" type="video/mp4">
+  </video>
+  <div class="absolute top-0 left-0 w-full h-full">
+    <div class="grid grid-cols-12">
+
+      <div id="bentobox-personal" class="col-span-3 col-start-1 p-2 row-start-1 row-span-3">
+        <p class="text-white font-bold text-center"> Bento Box (Pessoal) </p>
+        <div
+          class="border border-gray-100 bg-transparent backdrop-filter backdrop-blur-sm bg-opacity-0 grid grid-cols-3 gap-2 p-2 text-white rounded-md">
+          <a class="h-24 rounded-md border border-gray-100 bg-transparent backdrop-filter backdrop-blur-md flex justify-center items-center"
+            href="https://bsky.app" target="_blank">
+            <i class="text-5xl fa-brands fa-bluesky"></i>
+          </a>
+          <a class="h-24 rounded-md border border-gray-100 bg-transparent backdrop-filter backdrop-blur-md flex justify-center items-center"
+            href="https://youtube.com" target="_blank">
+            <i class="text-5xl fa-brands fa-youtube"></i>
+          </a>
+          <a class="h-24 rounded-md border border-gray-100 bg-transparent backdrop-filter backdrop-blur-md flex justify-center items-center"
+            href="https://outlook.live.com/mail/0" target="_blank">
+            <i class="text-5xl fa-solid fa-envelope"></i>
+          </a>
+          <a class="h-24 rounded-md border border-gray-100 bg-transparent backdrop-filter backdrop-blur-md flex justify-center items-center"
+            href="https://web.whatsapp.com" target="_blank">
+            <i class="text-5xl fa-brands fa-whatsapp"></i>
+          </a>
+          <a class="h-24 rounded-md border border-gray-100 bg-transparent backdrop-filter backdrop-blur-md flex justify-center items-center"
+            href="https://novoportal.cruzeirodosul.edu.br" target="_blank">
+            <i class="text-5xl fa-solid fa-chalkboard-user"></i>
+          </a>
+          <a class="h-24 rounded-md border border-gray-100 bg-transparent backdrop-filter backdrop-blur-md flex justify-center items-center"
+            href="https://github.com/Mourishitz" target="_blank">
+            <i class="text-5xl fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div id="searchbar" class="col-start-8 col-span-5 p-2">
+        <div class="relative">
+          <input id="default-search"
+            class="w-full bg-transparent rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 text-white border border-gray-100 block p-4 ps-6 text-sm"
+            placeholder="Pesquisar" />
+          <button id="search-button"
+            class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 font-medium rounded-lg text-sm px-4 py-2">Pesquisar</button>
+        </div>
+      </div>
+
+      <div id="clock" class="col-start-8 col-span-3 text-end">
+        <span id="Guarulhos_z17b" class="text-white text-5xl font-bold "></span>
+        <script src="//widget.time.is/t.js"></script>
+        <script>
+          time_is_widget.init({Guarulhos_z17b: {time_format: "12hours:minutes:secondsAMPM"}});
+        </script>
+      </div>
+
+      <div id="spotify" class="col-start-11 col-span-2">
+        <img
+          src="https://spotify-github-profile.kittinanx.com/api/view?uid=gabrielmorishita&cover_image=true&theme=natemoo-re&bar_color=53b14f&bar_color_cover=false" />
+      </div>
+
+      <div id="bentobox-professional" class="col-span-3 col-start-1 p-2">
+        <p class="text-white font-bold text-center"> Bento Box (Profissional) </p>
+        <div
+          class="border border-gray-100 bg-transparent backdrop-filter backdrop-blur-sm bg-opacity-0 grid grid-cols-3 gap-2 p-2 text-white rounded-md">
+          <a class="h-24 rounded-md border border-gray-100 bg-transparent backdrop-filter backdrop-blur-md flex justify-center items-center"
+            href="https://outlook.office.com/mail/0" target="_blank">
+            <i class="text-5xl fa-solid fa-envelope"></i>
+          </a>
+          <a class="h-24 rounded-md border border-gray-100 bg-transparent backdrop-filter backdrop-blur-md flex justify-center items-center"
+            href="https://teams.microsoft.com/v2" target="_blank">
+            <i class="text-5xl fa-solid fa-users"></i>
+          </a>
+          <a class="h-24 rounded-md border border-gray-100 bg-transparent backdrop-filter backdrop-blur-md flex justify-center items-center"
+            href="https://www.figma.com/design/QLOZb3U7J3kMbuIW5GyMDN/%C3%81rea-logada-(Copy)?t=Wz2RdjXCXTwFxTWJ-0"
+            target="_blank">
+            <i class="text-5xl fa-brands fa-figma"></i>
+          </a>
+          <a class="h-24 rounded-md border border-gray-100 bg-transparent backdrop-filter backdrop-blur-md flex justify-center items-center"
+            href="https://github.com/HubyTechTeam" target="_blank">
+            <i class="text-5xl fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tomorrow bottom-[-22px] fixed w-full pb-[22px]" data-location-id="012070" data-language="PT"
+      data-unit-system="METRIC" data-skin="dark" data-widget-type="upcoming">
+      <a href="https://www.tomorrow.io/weather-api/" rel="nofollow noopener noreferrer" target="_blank"
+        style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;">
+        <img alt="Powered by the Tomorrow.io Weather API"
+          src="https://weather-website-client.tomorrow.io/img/powered-by.svg" width="250" height="18" />
+      </a>
+    </div>
+
+
+    <script>
+      (function (d, s, id) {
+        if (d.getElementById(id)) {
+          if (window.__TOMORROW__) {
+            window.__TOMORROW__.renderWidget();
+          }
+          return;
+        }
+        const fjs = d.getElementsByTagName(s)[0];
+        const js = d.createElement(s);
+        js.id = id;
+        js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, 'script', 'tomorrow-sdk');
+    </script>
+  </div>
+
+</body>
+
+</html>
