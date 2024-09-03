@@ -39,8 +39,15 @@
       setTimeout(displayClock, 1000);
     }
 
+    function updateSpotifyTrack(timeout) {
+      var spotifyPlayer = document.getElementById('spotify-player');
+      spotifyPlayer.src = 'https://spotify-github-profile.kittinanx.com/api/view?uid=gabrielmorishita&cover_image=true&theme=natemoo-re&bar_color=53b14f&bar_color_cover=false&foo=' + new Date().getTime();
+    }
+
+
     document.addEventListener('DOMContentLoaded', function () {
       displayClock();
+      updateSpotifyTrack();
 
       var searchButton = document.getElementById('search-button');
       var searchInput = document.getElementById('default-search');
@@ -119,8 +126,7 @@
       </div>
 
       <div id="spotify" class="col-start-11 col-span-2">
-        <img
-          src="https://spotify-github-profile.kittinanx.com/api/view?uid=gabrielmorishita&cover_image=true&theme=natemoo-re&bar_color=53b14f&bar_color_cover=false" />
+        <img id="spotify-player" onclick="updateSpotifyTrack()" />
       </div>
 
       <div id="bentobox-professional" class="col-span-3 col-start-1 p-2">
