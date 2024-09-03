@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -11,6 +11,53 @@
   <script src="https://cdn.tailwindcss.com/"></script>
   <link rel="icon" type="image/png" href="public/favicon.ico" />
 
+  <script>
+    const CONFIG = {
+      twelveHourFormat: true
+    };
+
+    function displayClock() {
+      const monthNames = ['Janeiro', 'Fevereiro', 'Mar�o', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+      var d = new Date();
+      var mm = monthNames[d.getMonth()];
+      var dd = d.getDate();
+      var min = (mins = ('0' + d.getMinutes()).slice(-2));
+      var hh = d.getHours();
+      var ss = ('0' + d.getSeconds()).slice(-2);
+      var ampm = '';
+
+      if (CONFIG.twelveHourFormat) {
+        ampm = hh >= 12 ? ' pm' : ' am';
+        hh = hh % 12;
+        hh = hh ? hh : 12;
+      }
+
+      document.getElementById('hour').innerText = hh + ':' + min + ':' + ss + ampm;
+      document.getElementById('date').innerText = dd + ' ' + mm;
+
+      setTimeout(displayClock, 1000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      displayClock();
+
+      var searchButton = document.getElementById('search-button');
+      var searchInput = document.getElementById('default-search');
+
+      searchInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          searchButton.click();
+        }
+      });
+
+      searchButton.addEventListener('click', function () {
+        var searchValue = searchInput.value;
+        var searchUrl = 'https://duckduckgo.com/?q=' + searchValue;
+        window.open(searchUrl, '_blank');
+      });
+    });
+  </script>
 </head>
 
 <body class="relative overflow-hidden w-full h-screen">
@@ -61,12 +108,14 @@
         </div>
       </div>
 
-      <div id="clock" class="col-start-8 col-span-3 text-end">
-        <span id="Guarulhos_z17b" class="text-white text-5xl font-bold "></span>
-        <script src="//widget.time.is/t.js"></script>
-        <script>
-          time_is_widget.init({Guarulhos_z17b: {time_format: "12hours:minutes:secondsAMPM"}});
-        </script>
+      <div id="clock" class="col-start-8 col-span-3 flex flex-col justify-center">
+        <div class="text-white font-bold text-4xl self-end">
+          <p id="hour"></p>
+        </div>
+
+        <div class="text-white text-2xl self-end">
+          <p id="date"></p>
+        </div>
       </div>
 
       <div id="spotify" class="col-start-11 col-span-2">
